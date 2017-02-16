@@ -1,0 +1,37 @@
+---
+swagger: "2.0"
+info:
+  description: "An API to demonstrate SwaggerHub"
+  version: "1.0.0"
+  title: "Simple API"
+host: "virtserver.swaggerhub.com"
+basePath: "/swaggerhub-demo-account/Example_API/1.0.0"
+schemes:
+- "https"
+paths:
+  /example:
+    get:
+      operationId: "exampleGET"
+      parameters:
+      - name: "example_parameter"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+      x-swagger-router-controller: "Default"
+  /test-path/{id}:
+    get:
+      operationId: "test_pathIdGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Echo test-path"
+      x-swagger-router-controller: "Default"
+definitions: {}
